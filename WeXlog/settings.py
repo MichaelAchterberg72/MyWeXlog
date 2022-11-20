@@ -272,9 +272,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         #'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'test', #'test_load', #,
+        'NAME': '', #'test_load', #,
         'USER': 'postgres',
-		'PASSWORD': 'rdf8tm1234', #MA
+		'PASSWORD': '', #MA
         'HOST': 'localhost',
         #'HOST': 'dbhost',
         'PORT': '5432'
@@ -397,8 +397,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-AWS_ACCESS_KEY_ID = 'AKIASSC2VYJP2CWZAV27'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = ''
+AWS_SECRET_ACCESS_KEY = ''
 AWS_STORAGE_BUCKET_NAME = 'dot-test-machterberg'
 AWS_S3_CUSTOM_DOMAIN = 's3-dot-machterberg.s3.amazonaws.com'
 AWS_S3_REGION_NAME = 'eu-west-2'
@@ -428,26 +428,25 @@ if app_config.paypal_switch == 'sandbox':
     PAYPAL_RECEIVER_EMAIL = "sb-wynfk1244760@business.example.com"
 else:
     PAYPAL_TEST = False
-    PAYPAL_RECEIVER_EMAIL = "accounts@devoptec.com"
+    PAYPAL_RECEIVER_EMAIL = ""
 
 # Follow instructions to create new certs for server from https://re.readthedocs.io/es/stable/standard/encrypted_buttons.html to create certs
-PAYPAL_PRIVATE_CERT = 'paypal/cert/paypal_private.pem'  #'/path/to/paypal_private.pem'  $ openssl genrsa -out paypal_private.pem 1024
-PAYPAL_PUBLIC_CERT = 'paypal/cert/paypal_public.pem'  # '/path/to/paypal_public.pem'  $ openssl req -new -key paypal_private.pem -x509 -days 365 -out paypal_public.pem
-PAYPAL_CERT = 'paypal/cert/paypal_cert_pem_202107_Sandbox.txt'  # https://www.paypal.com/us/cgi-bin/webscr?cmd=_profile-website-cert or https://www.sandbox.paypal.com/us/cgi-bin/webscr?cmd=_profile-website-cert 'paypal/cert/paypal_cert_pen.txt'
-PAYPAL_CERT_ID = 'T3EH9FMMNTD32'
+PAYPAL_PRIVATE_CERT = ''  #'/path/to/paypal_private.pem'  $ openssl genrsa -out paypal_private.pem 1024
+PAYPAL_PUBLIC_CERT = ''  # '/path/to/paypal_public.pem'  $ openssl req -new -key paypal_private.pem -x509 -days 365 -out paypal_public.pem
+PAYPAL_CERT = ''  # https://www.paypal.com/us/cgi-bin/webscr?cmd=_profile-website-cert or https://www.sandbox.paypal.com/us/cgi-bin/webscr?cmd=_profile-website-cert 'paypal/cert/paypal_cert_pen.txt'
+PAYPAL_CERT_ID = ''
 
 # Accounts department email_id
-ACCOUNTS_EMAIL = "machterberg@tkgm.co.za"
+ACCOUNTS_EMAIL = ""
 
 # Celery Settings
-CELERY_SYSTEM_EMAIL = 'mywexloginfo@mywexlog.dev'
+CELERY_SYSTEM_EMAIL = ''
 
 ## Broker settings.
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
                         # 'amqp://myuser:mypassword@localhost:5672/myvhost'
                         # 'pyamqp://guest@localhost//'
-                        #'redis://127.0.0.1:6379/0'
-                        #'amqp://myuser:mypassword@localhost:5672/myvhost'
+                        #'redis://127.0.0.1:6379/0''
                         #'redis://localhost:6379/0'
                         # 'amqp://guest:guest@localhost:5672//' for RabbitMQ
 # CELERY_BACKEND = '#'
@@ -466,13 +465,9 @@ CELERY_SEND_EVENTS = True
 CELERY_TASK_ANNOTATIONS = {'tasks.add': {'rate_limit': '10/s'}}
 
     # SendGrid mail Settings
-SENDGRID_API_KEY = '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' #.com site
-# SENDGRID_API_KEY = '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'  # .dev site Domain
-# SENDGRID_API_KEY = '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'  # Test machterberg@devoptec.com single sender auth
+SENDGRID_API_KEY = '' #.com site
 
-SENDGRID_FROM_EMAIL = 'mywexlog@mywexlog.com'
-# SENDGRID_FROM_EMAIL = 'mywexloginfo@mywexlog.dev'    #
-# SENDGRID_FROM_EMAIL = 'machterberg@devoptec.com'
+SENDGRID_FROM_EMAIL = ''
 
 #TINYMCE_JS_URL = os.path.join(STATIC_URL, "tiny_mce/tiny_mce_src.js")
 TINYMCE_JS_ROOT = os.path.join(STATIC_ROOT, "tinymce")
